@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #050210;
+}
+#glow {
+  position: relative;
+  margin: 100px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(#fb5dad, #55fb9f, #b97aff);
+
+  animation-name: my-animation;
+  animation: my-animation 1s linear infinite;
+}
+#glow::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 300px;
+  filter: blur(25px);
+  border-radius: 50%;
+  background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+}
+#out {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+}
+#in {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: #050210;
+  animation-name: my-animation2;
+  animation: my-animation2 1s linear infinite;
+}
+@keyframes my-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes my-animation2 {
+  0% {
+    background: radial-gradient(0% 0%, #050210, #120c27);
+  }
+  20% {
+    background: radial-gradient(20% 20%, #050210, #120c27);
+  }
+  40% {
+    background: radial-gradient(40% 40%, #050210, #120c27);
+  }
+  60% {
+    background: radial-gradient(at 60% 60%, #050210, #120c27);
+  }
+  80% {
+    background: radial-gradient(80% 80%, #050210, #120c27);
+  }
+  100% {
+    background: radial-gradient(100% 100%, #050210, #050210);
+  }
+}
